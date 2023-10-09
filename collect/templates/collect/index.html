@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>タイトル</title>
+</head>
+<body>
+
+<h1>見出し1</h1>
+<p>{{message}}</p>
+
+<h2>見出し2</h2>
+<p>段落2</p>
+
+
+{% comment ’以下の2行をコメントアウト’ %}
+<form action="{% url 'index' %}" method="post">
+{% csrf_token %}
+<label for="msg">message: </label>
+<input id="msg" type="text" name="msg">
+<input type="submit" value="click">
+</form>
+{% endcomment %}
+
+<h3>{{error}}<h3>
+
+<form action="{% url 'form' %}" method="post">
+{% csrf_token %}
+<h3>データの登録 </h3>
+<input id="BUTTON_ID" type="hidden" name="BUTTON_ID" value="001">
+<input id="storeName" type="text" name="storeName" placeholder="店名"><br>
+<input id="date" type="date" name="date"　><br>
+<label for="msg">URL:</label>
+<input id="msg" type="text" name="url">
+<input type="submit" value="click">
+</form>
+
+<form action="{% url 'form' %}" method="post">
+{% csrf_token %}
+<h3>並びの回帰分析 </h3>
+<input id="BUTTON_ID" type="hidden" name="BUTTON_ID" value="003">
+<input id="date1" type="date" name="date1"　><br>
+<input id="date2" type="date" name="date2"　><br>
+<input type="submit" value="click">
+</form>
+
+<h3>見出し3</h3>
+<p>段落3</p>
+
+</body>
+</html>

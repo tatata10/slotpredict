@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>タイトル</title>
+</head>
+<body>
+
+<h1>見出し1</h1>
+<p>{{message}}</p>
+<form action="{% url 'form' %}" method="post">
+{% csrf_token %}
+<input id="BUTTON_ID" type="hidden" name="BUTTON_ID" value="002">
+<input type="file" name="excelfile">
+<input type="submit" value="excelに出力">
+</form>
+<table>
+{% for row in data %}
+  <tr>
+    {% for item in row %}
+      <td>{{ item }}</td>
+    {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+
+
+<h2>見出し2</h2>
+<p>段落2</p>
+
+<h3>見出し3</h3>
+<p>段落3</p>
+
+</body>
+</html>
